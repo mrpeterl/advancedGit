@@ -1,13 +1,14 @@
 #!/bin/bash
+# Must create a folder in the user's home directory prior to execution "~/folders/"
 
-if [ $# -ne 2 ]
-then
-echo "Wrong number of parameters entered. Plese enter a folder name and a file name"
+
+if [ $# -ne 2 ]; then
+	echo "Wrong number of parameters entered. Plese enter a folder name and a file name"
 else
-if [ ! -d "~/folders/$1" ]
-then
-mkdir ~/folders/$1
-fi
-cd ~/folders/$1
-echo "Hello" >> $2.txt
+	if [ ! -d ~/folders/$1 ]; then
+		mkdir ~/folders/$1
+	fi
+	cd ~/folders/$1
+	#file created in pwd and not intended folder
+	echo "Hello" >> $2.txt
 fi
